@@ -13,6 +13,9 @@
  * @param {number} target
  * @return {number[]}
  */
+var numbers=[2, 7, 11, 15];
+var target = 9;
+
 var twoSum = function(numbers, target) {
     var len = numbers.length;
 
@@ -26,3 +29,5 @@ var twoSum = function(numbers, target) {
         }
     }
 };
+
+console.log(twoSum(numbers, target));
