@@ -16,7 +16,8 @@ function List() {
     this.head = new ListNode('head');
 }
 //尾插法
-List.prototype.setNext = function (node) {
+List.prototype.setNext = function (val) {
+    var node = new ListNode(val);
     var head = this.head;
     while (head.next) {
         head = head.next;
@@ -25,7 +26,8 @@ List.prototype.setNext = function (node) {
     return this;
 };
 //头插法
-List.prototype.setPre = function (node) {
+List.prototype.setPre = function (val) {
+    var node = new ListNode(val)
     if (this.head.next == null) {
         this.head.next = node;
     } else {
@@ -123,8 +125,8 @@ var arr = [1, 2, 3, 4, 5];
 
 var list = new List();
 for (var i = 0; i < arr.length; i++) {
-    list.setNext(new ListNode(arr[i]));
-    //list.setPre(new ListNode(arr[i]));
+    list.setNext(arr[i]);
+    //list.setPre(arr[i]);
 }
 
 //list.setNext(new ListNode(1)).setNext(new ListNode(2)).setNext(new ListNode(3)).dispaly();

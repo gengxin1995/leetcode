@@ -18,7 +18,8 @@ function DList() {
 }
 
 //创建链表
-DList.prototype.setPre = function (node) {
+DList.prototype.setPre = function (val) {
+    var node = new DListNode(val);
     if (this.head.next == null) {
         this.head.next = node;
         node.pre = this.head;
@@ -55,7 +56,7 @@ var arr = [1, 2, 3, 4, 5];
 
 var dlist = new DList();
 for (var i = 0; i < arr.length; i++) {
-    dlist.setPre(new DListNode(arr[i]));
+    dlist.setPre(arr[i]);
 }
 //dlist.deleteNode(3);
 dlist.display();
