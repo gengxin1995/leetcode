@@ -45,11 +45,54 @@ BST.prototype.insert = function (val) {
 };
 //中序遍历，生成有序序列
 BST.prototype.inOrder = function (node) {
-    if (node.left)
+    if (node == this.root) {
+        this.traverse = [];
+    }
+    if (!(node == null)) {
         this.inOrder(node.left);
-    this.traverse.push(node.val);
-    if (node.right)
+        this.traverse.push(node.val);
         this.inOrder(node.right);
+    }
+};
+//先序遍历
+BST.prototype.preOrder = function (node) {
+    if (node == this.root) {
+        this.traverse = [];
+    }
+    if (!(node == null)) {
+        this.traverse.push(node.val);
+        this.preOrder(node.left);
+        this.preOrder(node.right);
+    }
+};
+//后序遍历
+BST.prototype.postOrder = function (node) {
+    if (node == this.root) {
+        this.traverse = [];
+    }
+    if (!(node == null)) {
+        this.postOrder(node.left);
+        this.postOrder(node.right);
+        this.traverse.push(node.val);
+    }
+};
+//广度优先遍历
+BST.prototype.bfs = function (node) {
+    var arr = [];
+    if (node == this.root) {
+        this.traverse = [];
+        arr.push(node);
+    }
+    while (arr.length > 0) {
+        var node1 = arr.shift();
+        this.traverse.push(node1.val);
+        if (node1.left) {
+            arr.push(node1.left);
+        }
+        if (node1.right) {
+            arr.push(node1.right);
+        }
+    }
 };
 //查找
 BST.prototype.find = function (val) {
@@ -66,12 +109,21 @@ BST.prototype.find = function (val) {
 };
 
 
-var arr = [8, 12, 3, 14, 25, 7];
+var arr = [18, 12, 3, 14, 25, 7, 22, 28];
 var bst = new BST();
 for (var i = 0; i < arr.length; i++) {
     bst.insert(arr[i]);
 }
 bst.inOrder(bst.root);
 console.log(bst.traverse);
-console.log(bst.find(7) ? true : false);
+bst.preOrder(bst.root);
+console.log(bst.traverse);
+bst.postOrder(bst.root);
+console.log(bst.traverse);
+bst.bfs(bst.root);
+console.log(bst.traverse);
+//console.log(bst.find(7) ? true : false);
 
+// var bst1 = new BST();
+// bst1.inOrder(bst1.root);
+// console.log(bst1.traverse);
