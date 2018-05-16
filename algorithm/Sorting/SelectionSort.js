@@ -1,3 +1,7 @@
+/**
+ * 最好情况、最坏情况和平均时间复杂度均为O(n^2)，空间复杂度O(1)
+ * @param arr
+ */
 function selectionSort(arr) {
     var len = arr.length;
     var min;
