@@ -8,9 +8,7 @@ function bubbleSort(arr) {
     for (var i = 0; i < len; i++) {
         for (var j = 0; j < len - 1 - i; j++) {
             if (arr[j] > arr[j + 1]) {
-                var tmp = arr[j + 1];
-                arr[j + 1] = arr[j];
-                arr[j] = tmp;
+                swap(arr, j, j + 1);
             }
         }
     }
@@ -23,9 +21,7 @@ function bubbleSort1(arr) {
         for (var j = 0; j < i; j++) {
             if (arr[j] > arr[j + 1]) {
                 pos = j;
-                var tmp = arr[j + 1];
-                arr[j + 1] = arr[j];
-                arr[j] = tmp;
+                swap(arr, j, j + 1);
             }
         }
         i = pos;
@@ -37,22 +33,24 @@ function bubbleSort2(arr) {
     for (var i = 0; i < tail; tail--) {
         for (var j = tail; j > i; j--) {
             if (arr[j] < arr[j - 1]) {
-                var tmp = arr[j - 1];
-                arr[j - 1] = arr[j];
-                arr[j] = tmp;
+                swap(arr, j - 1, j);
             }
         }
         i++;
         for (var j = i; j < tail; j++) {
             if (arr[j] > arr[j + 1]) {
-                var tmp = arr[j + 1];
-                arr[j + 1] = arr[j];
-                arr[j] = tmp;
+                swap(arr, j, j + 1);
             }
         }
     }
 }
 
+function swap(arr, i, j) {
+    var tmp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = tmp;
+}
+
 var arr = [5, 2, 18, 7, 22, 19];
-bubbleSort1(arr)
+bubbleSort2(arr)
 console.log(arr);
