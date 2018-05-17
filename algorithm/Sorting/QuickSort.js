@@ -1,3 +1,10 @@
+/**
+ * 最好情况和平均时间复杂度为O(nlogn)，最坏情况为O(n^2)
+ * 空间复杂度为O(1)
+ * @param arr
+ * @param l
+ * @param r
+ */
 function quickSort(arr, l, r) {
     if (r <= l) {
         return;

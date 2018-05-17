@@ -5,7 +5,7 @@ function floydWarshall(graph) {
     for (var i = 0; i < len; i++) {
         dist[i] = [];
         for (var j = 0; j < len; j++) {
-            if (graph[i][j] === 0) {
+            if (graph[i][j] === 0 && i !== j) {
                 dist[i][j] = Infinity;
             } else {
                 dist[i][j] = graph[i][j];
