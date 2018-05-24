@@ -13,7 +13,7 @@
  * Do it in-place.
  */
 var spaceReplacement = function (s) {
-    s = s.replace(/\s+/g, '%20');
+    s = s.replace(/\s/g, '%20');
     return s.length;
 };
 
