@@ -21,7 +21,7 @@ var strStr = function(haystack, needle) {
         len_n = needle.length;
     for (var i = 0; i < len_h - len_n + 1; i++) {
         for (var j = 0; j < len_n; j++) {
-            if (haystack.charAt(i + j) !== needle.charAt(j)) {
+            if (haystack[i + j] !== needle[j]) {
                 break;
             }
 
