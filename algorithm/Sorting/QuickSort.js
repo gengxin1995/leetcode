@@ -32,7 +32,33 @@ function quickSort(arr, l, r) {
     quickSort(arr, l, left - 1);
     quickSort(arr, left + 1, r);
 }
+function quickSort1(arr, l, r) {
+    if (r <= l) {
+        return;
+    }
+    var left = l;
+    var right = r - 1;
+    var pos = arr[r];
+    while (left < right) {
+        while (left < right && arr[left] <= pos) {
+            left++;
+        }
+        while (left < right && arr[right] > pos) {
+            right--;
+        }
+        if (left < right) {
+            var tmp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = tmp;
+        }
+    }
+    var tmp = arr[left];
+    arr[left] = arr[r];
+    arr[r] = tmp;
+    quickSort(arr, l, left - 1);
+    quickSort(arr, left + 1, r);
+}
 
 var arr = [5, 2, 18, 7, 22, 19, 32, 16, 24];
-quickSort(arr, 0, arr.length - 1);
+quickSort1(arr, 0, arr.length - 1);
 console.log(arr);
