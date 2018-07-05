@@ -38,10 +38,12 @@ List.prototype.setPre = function (val) {
 //展示链表数据
 List.prototype.display = function () {
     var next = this.head.next;
+    var res = [];
     while (next) {
-        console.log(next.val);
+        res.push(next.val);
         next = next.next;
     }
+    console.log(res);
 };
 //在给定节点后添加节点
 List.prototype.addNode = function (val1, val2) {
@@ -121,13 +123,13 @@ List.prototype.findMiddle = function () {
     return slow.val;
 };
 
-var arr = [1, 2, 3, 4, 5];
-
-var list = new List();
-for (var i = 0; i < arr.length; i++) {
-    list.setNext(arr[i]);
-    //list.setPre(arr[i]);
-}
+// var arr = [1, 2, 3, 4, 5];
+//
+// var list = new List();
+// for (var i = 0; i < arr.length; i++) {
+//     list.setNext(arr[i]);
+//     //list.setPre(arr[i]);
+// }
 
 //list.setNext(new ListNode(1)).setNext(new ListNode(2)).setNext(new ListNode(3)).dispaly();
 
@@ -138,8 +140,9 @@ for (var i = 0; i < arr.length; i++) {
 // }
 // head.next = list.head.next
 //list.deleteNode(1)
-list.addNode(2, 6);
+//list.addNode(2, 6);
 //console.log(list.hasCircle());
 //console.log(list.findMiddle());
 //list.reverseList();
-list.display();
+//list.display();
+module.exports = List;
