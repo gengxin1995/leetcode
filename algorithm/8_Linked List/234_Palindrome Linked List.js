@@ -13,7 +13,7 @@
  * Could you do it in O(n) time and O(1) space?
  */
 
-var List = require('../Data Structure/Linked List/SinglyLinkedList');
+var List = require('../1_Data Structure/Linked List/SinglyLinkedList');
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
