@@ -1,1 +1,2 @@
 add newFeature1
+feature1 step2
